@@ -70,6 +70,9 @@ BB.prototype = {
 						// determine the inner text
 						parent.innerCode = str.substring(opening.index, re.lastIndex - match[0].length);
 						parent.innerText = parent.innerCode.replace(re,'');
+						
+						// reassign the index (chrome)
+						re.lastIndex = lastIndex;
 
 						return parent;
 
