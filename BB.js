@@ -143,7 +143,14 @@ BB.prototype = {
 		}
 		
 		return result;
+	},
 
+	validate : function(str){
+		try {
+			return !!this.toJSON(str);
+		} catch (e){
+			return false;
+		}
 	}
 
 };
